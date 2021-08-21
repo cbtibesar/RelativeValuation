@@ -1,0 +1,16 @@
+
+.delete{
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+    width:30px;
+    background-color: white;
+}
+
+.above-average{
+    background-color: rgba(0, 128, 0, 0.5);
+}
+.below-average{
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
