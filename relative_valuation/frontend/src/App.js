@@ -1,6 +1,8 @@
 import StockTable from "./components/BodyComponents/StockTable/StockTable";
 import {useEffect, useState} from "react";
 import axios from "axios";
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 import AddStock from "./components/BodyComponents/AddStock";
 import AverageTable from "./components/BodyComponents/AverageTable";
 import Navbar from "./components/Navbar/Navbar";
