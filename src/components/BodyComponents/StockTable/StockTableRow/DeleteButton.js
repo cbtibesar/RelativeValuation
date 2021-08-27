@@ -1,5 +1,4 @@
 import {FaTimes} from "react-icons/all";
-import React, {useState} from "react";
 
 const DeleteButton =({ show, stock, onDelete })=>{
 

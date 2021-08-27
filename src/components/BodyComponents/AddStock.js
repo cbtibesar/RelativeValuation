@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 const AddStock =({ onAdd })=> {
     const [ticker, setTicker] = useState('')
     const onSubmit = (e) =>{

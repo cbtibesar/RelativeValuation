@@ -1,4 +1,3 @@
-import React, {useState, useEffect} from 'react'
 import StockTableRow from "./StockTableRow/StockTableRow";
 import './StockTable.css'
 

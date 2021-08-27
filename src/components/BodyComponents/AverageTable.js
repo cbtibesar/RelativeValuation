@@ -1,5 +1,3 @@
-import {useState} from "react";
-
 const AverageTable =({ averageData })=>{
     const billion = 1000000000
 
