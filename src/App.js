@@ -108,7 +108,7 @@ const App =()=> {
         <AddStock onAdd={ onAdd }/>
         {
             (stocksData.length>0) ? <StockTable stocks={ stocksData } averageData={averageData} onDelete={ onDelete } />
-                : <div style={{ position:'sticky', center: "0%"}}>Add a stock to get started!</div>
+                : <div style={{ textAlign:'center' }}>Add a stock to get started!</div>
         }
         <div style={{height:'30px'}}/>
         {
