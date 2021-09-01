@@ -18,8 +18,6 @@ import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-#
-# django_heroku.settings(locals())
 
 dotenv_file = os.path.join(BASE_DIR, '.env')
 if os.path.isfile(dotenv_file):
@@ -133,9 +131,6 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-
-
-
 CORS_ORIGIN_WHITELIST = [
     'https://localhost:3000',
 ]
@@ -147,3 +142,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 options = DATABASES['default'].get('OPTIONS', {})
 options.pop('sslmode', None)
+
+django_heroku.settings(locals())

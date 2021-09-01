@@ -4,7 +4,7 @@ import './StockTable.css'
 const StockTable=({ stocks, averageData, onDelete })=> {
 
     return(
-        <table style={{position:'sticky', left:'1%', width:'95%' }}>
+        <table id='stockTable' style={{position:'sticky', left:'1%', width:'95%' }}>
             <thead key='tableHeader'>
                 <tr key='headerRow'>
                     <th className='delete'></th>

@@ -14,7 +14,7 @@ const App =()=> {
     const [averageData, setAverageData] = useState([])
     const NULL_FIELD_MAGIC_NUMBER = -420.69
 
-    function containsObject(obj, list) {
+    const containsObject = (obj, list) => {
         for (var i = 0; i < list.length; i++) {
             if (list[i].ticker === obj) {
                 return true;
@@ -22,6 +22,8 @@ const App =()=> {
         }
         return false
     }
+
+
 
     const updateAverageData =(stocks) => {
         if(stocks.length>0){
