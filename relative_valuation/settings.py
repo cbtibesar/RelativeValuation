@@ -135,6 +135,8 @@ CORS_ORIGIN_WHITELIST = [
     'https://localhost:3000',
 ]
 
+CSRF_COOKIE_NAME = "csrftoken"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

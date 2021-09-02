@@ -29,7 +29,7 @@ def check_for_null_string(info, financial):
         return info[financial]
 
 
-
+@method_decorator(csrf_exempt, name='dispatch')
 class StocksViewSet(View):
     def post(self, request):
         t = json.loads(request.body.decode('utf-8'))
@@ -50,7 +50,7 @@ class StocksViewSet(View):
             'roe': check_for_null_int(info, "returnOnEquity")
         }
 
-        stock = Stock.objects.create(**stock_data)
+       ## stock = Stock.objects.create(**stock_data)
 
         return JsonResponse(stock_data, status=201)
 
@@ -80,7 +80,7 @@ class StocksViewSet(View):
         return JsonResponse(data, status=200)
 
 
-
+@method_decorator(csrf_exempt, name='dispatch')
 class StockViewSet(View):
     def delete(self, request, ticker):
         ticker = ticker.upper()
@@ -89,12 +89,12 @@ class StockViewSet(View):
         message = {'message': f'Stock {ticker} has been deleted'}
         return JsonResponse(message, status=200)
 
-class Assets(View):
-    def get(self, _request, filename):
-        path = os.path.join(os.path.dirname(__file__), 'static', filename)
+# class Assets(View):
+#     def get(self, _request, filename):
+#         path = os.path.join(os.path.dirname(__file__), 'static', filename)
 
-        if os.path.isfile(path):
-            with open(path, 'rb') as file:
-                return HttpResponse(file.read(), content_type='application/javascript')
-        else:
-            return HttpResponseNotFound()
+#         if os.path.isfile(path):
+#             with open(path, 'rb') as file:
+#                 return HttpResponse(file.read(), content_type='application/javascript')
+#         else:
+#             return HttpResponseNotFound()

@@ -5,6 +5,7 @@ import AddStock from "./components/BodyComponents/AddStock";
 import AverageTable from "./components/BodyComponents/AverageTable";
 import Navbar from "./components/Navbar/Navbar";
 import './components/BodyComponents/BodyComponents.css'
+
 axios.defaults.xsrfCookieName = 'csrftoken'
 axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 
@@ -72,14 +73,14 @@ const App =()=> {
 
     }
 
-    useEffect(()=> {
-         axios.get("stocks/")
-          .then(res => {
-              updateAverageData(res.data.stocksData)
-              setStocksData(res.data.stocksData)
+    // useEffect(()=> {
+    //      axios.get("stocks/")
+    //       .then(res => {
+    //           updateAverageData(res.data.stocksData)
+    //           setStocksData(res.data.stocksData)
 
-          }).catch(error => console.error('Error: $(error)'))
-    }, [])
+    //       }).catch(error => console.error('Error: $(error)'))
+    // }, [])
 
     const onAdd =(ticker)=>{
         if(!containsObject(ticker, stocksData)){
@@ -97,7 +98,7 @@ const App =()=> {
     }
 
     const onDelete = ({ ticker }) =>{
-        axios.delete("stocks/delete-stock/" + ticker)
+        //axios.delete("stocks/delete-stock/" + ticker)
         setStocksData(stocksData.filter((stock) => stock.ticker !== ticker))
         updateAverageData(stocksData.filter((stock) => stock.ticker !== ticker))
     }
